@@ -160,6 +160,8 @@
 		},
 
 		_uncheckOtherRadios: function() {
+			var widget = this;
+
 			if ( widget.element.is( ':radio' ) ) {
 				var name = widget.element.attr( 'name' );
 
