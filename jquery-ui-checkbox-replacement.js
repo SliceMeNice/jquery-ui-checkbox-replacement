@@ -135,12 +135,7 @@
 			var widget = this;
 			widget.checked( widget.element.prop( 'checked' ) );
 
-			if ( widget.element.is( ':radio' ) ) {
-				var name = widget.element.attr( 'name' );
-
-				var $others = $( 'input[name="' + name + '"]' ).not( widget.element );
-				$others.checkboxReplacement( 'checked', !widget.element.is( ':checked' ) );
-			}
+			widget._uncheckOtherRadios();
 		},
 
 		_onClick: function( event ) {
@@ -148,10 +143,29 @@
 			var source = event.target || event.srcElement;
 
 			if ( source !== widget.element[ 0 ] ) {
-				widget.element.prop( 'checked', !widget.element.prop( 'checked' ) );
+				var newValue = !widget.element.prop( 'checked' );
+
+				if ( widget.element.is( ':radio' ) ) {
+					newValue = true;
+				}
+
+				widget.element.prop( 'checked', newValue );
 			}
 
 			widget.checked( widget.element.prop( 'checked' ) );
+
+			if ( widget.element.parents( 'label' ).length == 0 ) {
+				widget._uncheckOtherRadios();
+			}
+		},
+
+		_uncheckOtherRadios: function() {
+			if ( widget.element.is( ':radio' ) ) {
+				var name = widget.element.attr( 'name' );
+
+				var $others = $( 'input[name="' + name + '"]' ).not( widget.element );
+				$others.checkboxReplacement( 'checked', false );
+			}
 		}
 	});
 
