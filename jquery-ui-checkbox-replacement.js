@@ -51,7 +51,7 @@
 
 			widget._disabled = false;
 			widget._checked = false;
-
+			
 			widget._registerEventListeners();
 
 			var disabled = widget.element.attr( 'disabled' );
@@ -64,6 +64,7 @@
 
 			if ( typeof checked !== typeof undefined && checked !== false ) {
 				widget.checked( true );
+				widget._wasCheckedInitially = true;
 			}
 
 			widget._trigger( 'hasBeenInitialized' );
@@ -125,6 +126,7 @@
 			var widget = this;
 
 			widget.element.on( 'change', widget._onChange.bind( widget ) );
+			widget.element.closest( 'form' ).on( 'reset', widget._onReset.bind( widget ) );
 
 			if ( widget.element.parents( 'label' ).length == 0 ) {
 				widget.wrapper.on( 'click', widget._onClick.bind( widget ) );
@@ -134,6 +136,13 @@
 		_onChange: function() {
 			var widget = this;
 			widget.checked( widget.element.prop( 'checked' ) );
+
+			widget._uncheckOtherRadios();
+		},
+
+		_onReset: function() {
+			var widget = this;
+			widget.checked( !!widget._wasCheckedInitially );
 
 			widget._uncheckOtherRadios();
 		},
