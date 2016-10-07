@@ -2,8 +2,12 @@
 
 ## Release History
 
-__1.0.3__
+__1.1.1__
   * Adapted change handler to also update the disabled state.
+
+__1.1.0__
+
+  * Added form reset event handler.
 
 __1.0.2__
 
