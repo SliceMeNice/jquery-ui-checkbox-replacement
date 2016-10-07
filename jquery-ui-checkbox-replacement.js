@@ -136,6 +136,7 @@
 		_onChange: function() {
 			var widget = this;
 			widget.checked( widget.element.prop( 'checked' ) );
+			widget.disabled( widget.element.prop( 'disabled' ) );
 
 			widget._uncheckOtherRadios();
 		},

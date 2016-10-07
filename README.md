@@ -2,6 +2,9 @@
 
 ## Release History
 
+__1.0.3__
+  * Adapted change handler to also update the disabled state.
+
 __1.0.2__
 
   * Fixed widget not being defined in _uncheckOtherRadios method.
