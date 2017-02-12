@@ -177,7 +177,7 @@
 
 				var $others = $( 'input[type="radio"][name="' + name + '"]' ).not( widget.element );
 
-				$other.each( function() {
+				$others.each( function() {
 					var $other = $( this );
 
 					if ( $other.data( 'smnCheckboxReplacement' ) ) {
