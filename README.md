@@ -2,6 +2,10 @@
 
 ## Release History
 
+__1.1.2__
+
+  * Fixed selection of other radio buttons to uncheck.
+
 __1.1.1__
   * Adapted change handler to also update the disabled state.
 

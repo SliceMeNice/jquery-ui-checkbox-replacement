@@ -175,8 +175,15 @@
 			if ( widget.element.is( ':radio' ) ) {
 				var name = widget.element.attr( 'name' );
 
-				var $others = $( 'input[name="' + name + '"]' ).not( widget.element );
-				$others.checkboxReplacement( 'checked', false );
+				var $others = $( 'input[type="radio"][name="' + name + '"]' ).not( widget.element );
+
+				$other.each( function() {
+					var $other = $( this );
+
+					if ( $other.data( 'smnCheckboxReplacement' ) ) {
+						$other.checkboxReplacement( 'checked', false );
+					}
+				} );
 			}
 		}
 	});
