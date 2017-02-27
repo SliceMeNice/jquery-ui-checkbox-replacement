@@ -159,7 +159,7 @@
 					newValue = true;
 				}
 
-				widget.element.prop( 'checked', newValue );
+				widget.element.prop( 'checked', newValue ).trigger( 'change' );
 			}
 
 			widget.checked( widget.element.prop( 'checked' ) );

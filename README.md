@@ -2,6 +2,10 @@
 
 ## Release History
 
+__1.1.3__
+
+  * Added triggering of change event, when element is being clicked.
+
 __1.1.2__
 
   * Fixed selection of other radio buttons to uncheck.
