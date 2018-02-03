@@ -51,16 +51,16 @@
 
 			widget._disabled = false;
 			widget._checked = false;
-			
+
 			widget._registerEventListeners();
 
-			var disabled = widget.element.attr( 'disabled' );
+			var disabled = widget.element.attr( 'disabled' ) || widget.element.prop( 'disabled' );
 
 			if (typeof disabled !== typeof undefined && disabled !== false) {
 				widget.disabled( true );
 			}
 
-			var checked = widget.element.attr( 'checked' );
+			var checked = widget.element.attr( 'checked' ) || widget.element.prop( 'checked' );
 
 			if ( typeof checked !== typeof undefined && checked !== false ) {
 				widget.checked( true );

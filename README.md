@@ -2,6 +2,10 @@
 
 ## Release History
 
+__1.1.4__
+
+  * Changed initialization of the checked and disabled state. Now, taking into account the input element's attributes and props.
+
 __1.1.3__
 
   * Added triggering of change event, when element is being clicked.
