@@ -1,0 +1,23 @@
+{
+  "name": "@slicemenice/jquery-ui-checkbox-replacement",
+  "version": "1.1.4",
+  "description": "Checkbox replacement based on jQuery UI Widget",
+  "keywords": [
+    "jQuery UI",
+    "checkbox"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SliceMeNice/jquery-ui-checkbox-replacement.git"
+  },
+  "author": "SliceMeNice",
+  "contributors": [{
+    "name": "Stefan Ullinger",
+    "email": "stefan@slicemenice.de"
+  }],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SliceMeNice/jquery-ui-checkbox-replacement/issues"
+  },
+  "homepage": "https://github.com/SliceMeNice/jquery-ui-checkbox-replacement#readme"
+}
